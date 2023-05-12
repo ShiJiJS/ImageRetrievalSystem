@@ -26,7 +26,7 @@ The system has three main processes, initialization, clustering hot update, and 
 
 ## 初始化 Initialization
 
-![](https://shijivk-blog.oss-cn-beijing.aliyuncs.com/img/%E5%88%9D%E5%A7%8B%E5%8C%96.jpg)
+![](https://github.com/ShiJiJS/ImageRetrievalSystem/tree/master/readmeImg/init.jpg)
 
 初始化的主要过程为初始化器采用多线程的方式读取本地目录下指定文件夹内的图片。分别用颜色矩算法和ORB算法计算出它的特征向量。因为颜色矩算法得出的特征向量为定长，为了提高检索速度。对颜色矩算法所产生的特征向量进行聚类处理。聚类采用ISODATA算法，将两种算法的特征向量和对颜色矩特征向量的聚类结果存入数据库，以便后续查找使用。
 
@@ -62,7 +62,7 @@ ISOData is the main controller of clustering, responsible for initialization, po
 
 ### 热更新
 
-![](https://shijivk-blog.oss-cn-beijing.aliyuncs.com/img/%E7%83%AD%E6%9B%B4%E6%96%B0.jpg)
+![](https://github.com/ShiJiJS/ImageRetrievalSystem/tree/master/readmeImg/hotUpdate.jpg)
 
 我们在java中自行实现了可以支持热更新的ISODATA算法。其热更新的主要流程如上图。
 
@@ -78,7 +78,7 @@ The scheduler also periodically checks the number of files that have been added 
 
 ## 图片检索
 
-![](https://shijivk-blog.oss-cn-beijing.aliyuncs.com/img/%E5%9B%BE%E7%89%87%E6%A3%80%E7%B4%A2.jpg)
+![](https://github.com/ShiJiJS/ImageRetrievalSystem/tree/master/readmeImg/imageSearch.jpg)
 
 图像检索过程较为简单。前端Web页面通过Axios请求将图片等请求信息传递给后端的SpringBoot程序。后端首先调用颜色矩和ORB算法，计算出传入图片在两种算法下的特征向量。
 
